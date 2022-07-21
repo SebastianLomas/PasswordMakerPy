@@ -17,6 +17,11 @@ def getNumber(numberStr : str) -> str:
 	number = numberStr[numberIndex:numberIndex+1]
 	return number
 
+def getSymbol(symbolStr : str) -> str:
+	symbolIndex = randint(0,len(symbolStr)-1)
+	symbol = symbolStr[symbolIndex:symbolIndex+1]
+	return symbol
+
 
 def getPassword():
 	letters = "abcdefghijklmnoprstuvwxyz"
@@ -34,6 +39,9 @@ def getPassword():
 			password += getLetter(letters)
 		elif choice == 2:
 			password += getNumber(numbers)
+		elif choice == 3:
+			password += getSymbol(symbols)
+
 		i += 1
 
 	print("Password: %s\nLength: %s"%(password,len(password)))
