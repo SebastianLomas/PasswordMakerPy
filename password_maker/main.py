@@ -12,6 +12,11 @@ def getLetter(letterStr):
 		
 	print("Is Upper: %d"%isUpper)
 	
+def getNumber(numberStr : str) -> str:
+	numberIndex = randint(0,len(numberStr)-1)
+	number = numberStr[numberIndex:numberIndex+1]
+	return number
+
 
 def getPassword():
 	letters = "abcdefghijklmnoprstuvwxyz"
@@ -27,10 +32,11 @@ def getPassword():
 
 		if choice == 1:
 			password += getLetter(letters)
-
+		elif choice == 2:
+			password += getNumber(numbers)
 		i += 1
 
-	print(password)
+	print("Password: %s\nLength: %s"%(password,len(password)))
 
 def main():
 	getPassword()
