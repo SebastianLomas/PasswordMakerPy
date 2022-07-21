@@ -1,10 +1,17 @@
 from random import randint
 
 def getLetter(letterStr):
+	isUpper = randint(0,1)
 	letterIndex = randint(0,len(letterStr)-1)
 	letter = letterStr[letterIndex:letterIndex+1]
 
-	return letter
+	if isUpper:
+		return letter.upper()
+	else:
+		return letter	
+		
+	print("Is Upper: %d"%isUpper)
+	
 
 def getPassword():
 	letters = "abcdefghijklmnoprstuvwxyz"
