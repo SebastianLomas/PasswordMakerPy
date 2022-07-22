@@ -1,9 +1,10 @@
 from random import randint
 
-def getLetter(letterStr):
+def getLetter() -> str:
+	letters = "abcdefghijklmnoprstuvwxyz"
 	isUpper = randint(0,1)
-	letterIndex = randint(0,len(letterStr)-1)
-	letter = letterStr[letterIndex:letterIndex+1]
+	letterIndex = randint(0,len(letters)-1)
+	letter = letters[letterIndex:letterIndex+1]
 
 	if isUpper:
 		return letter.upper()
@@ -12,14 +13,16 @@ def getLetter(letterStr):
 		
 	print("Is Upper: %d"%isUpper)
 	
-def getNumber(numberStr : str) -> str:
-	numberIndex = randint(0,len(numberStr)-1)
-	number = numberStr[numberIndex:numberIndex+1]
+def getNumber() -> str:
+	numbers = "0123456789"
+	numberIndex = randint(0,len(numbers)-1)
+	number = numbers[numberIndex:numberIndex+1]
 	return number
 
-def getSymbol(symbolStr : str) -> str:
-	symbolIndex = randint(0,len(symbolStr)-1)
-	symbol = symbolStr[symbolIndex:symbolIndex+1]
+def getSymbol() -> str:
+	symbols = "#$%&/()=¿?¡![]+*"
+	symbolIndex = randint(0,len(symbols)-1)
+	symbol = symbols[symbolIndex:symbolIndex+1]
 	return symbol
 
 
@@ -32,9 +35,6 @@ def getPassword():
 		else:
 			break
 			
-	letters = "abcdefghijklmnoprstuvwxyz"
-	numbers = "0123456789"
-	symbols = "#$%&/()=¿?¡![]+*"
 	password = ""
 
 	i = 0
@@ -44,11 +44,11 @@ def getPassword():
 		#print("Choice: %s"%choice)
 
 		if choice == 1:
-			password += getLetter(letters)
+			password += getLetter()
 		elif choice == 2:
-			password += getNumber(numbers)
+			password += getNumber()
 		elif choice == 3:
-			password += getSymbol(symbols)
+			password += getSymbol()
 
 		i += 1
 
