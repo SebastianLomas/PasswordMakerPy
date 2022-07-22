@@ -24,13 +24,21 @@ def getSymbol(symbolStr : str) -> str:
 
 
 def getPassword():
+	while True:
+		try:
+			passwordLength = int(input("Password Length: "))
+		except:
+			print("You Gave A Wrong Value.")
+		else:
+			break
+			
 	letters = "abcdefghijklmnoprstuvwxyz"
 	numbers = "0123456789"
 	symbols = "#$%&/()=¿?¡![]+*"
 	password = ""
 
 	i = 0
-	while i < 10:
+	while i < passwordLength:
 		choice = randint(1,3)
 		#choice = 1
 		#print("Choice: %s"%choice)
